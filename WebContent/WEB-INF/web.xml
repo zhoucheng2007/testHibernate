@@ -24,10 +24,23 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+	<!--　覆盖default　servlet的/,　springmvc　servlet将处理原来处理静态资源的映射　-->
 	<servlet-mapping>
 		<servlet-name>rest</servlet-name>
 		<url-pattern>/service/*</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping>	
+	
+	
+	<!--　浏览器不支持put,delete等method,由该filter将/blog?_method=delete转换为标准的http　delete方法　-->
+	<filter>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<servlet-name>rest</servlet-name>
+	</filter-mapping>
 	
 	<jsp-config>
 		<taglib>

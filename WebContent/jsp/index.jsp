@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="get" action="<%=request.getContextPath()%>/LoginServlet">      
-	<input type="text" name="userName" id="userName"> <input type="submit" value="submit" />      
+	<form action="<%=request.getContextPath()%>/service/employee/1">   
+	<input name="_method" type="hidden" value="delete"/>  
+   <input type="submit" value="submit" />      
 	</form>   
 </body>
 </html>
