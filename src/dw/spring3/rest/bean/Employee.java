@@ -9,6 +9,8 @@ public class Employee {
 	private String name;
 	private String email;
 	
+	private String sex;
+	
 	public Employee() {}
 	
 	public Employee(long id, String name, String email) {
